@@ -23,8 +23,8 @@ Este projeto utiliza o framework **CrewAI** para automatizar a criação de arti
 1. Clone este repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
-cd nome-do-repositorio
+git clone https://github.com/vldmr1337/entrega-crewai.git
+cd entrega-crewai
 ```
 
 2. Crie um ambiente virtual e ative-o:
@@ -43,7 +43,13 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Crie um arquivo `.env` para armazenar suas variáveis de ambiente (como a chave da API do Gemini, se necessário).
+4. Crie um arquivo `.env` e coloque sua GEMINI_KEY, no seguinte formato:
+
+```bash
+GEMINI_KEY=SUACHAVEAQUI
+```
+
+  Caso haja dúvida sobre como conseguir sua chave do Gemini, acesse esse [link](https://ai.google.dev/gemini-api/docs/api-key?hl=pt-br).
 
 ## Como usar
 
