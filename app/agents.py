@@ -2,11 +2,9 @@ from crewai import Agent
 from app.llm import get_gemini_llm
 from app.tools import WikipediaTool
 from app.schemas import ResearchResult, Article
-from dotenv import load_dotenv
 import os
 
-# Carregar as variáveis do arquivo .env
-load_dotenv()
+
 
 api_key = os.getenv("GEMINI_KEY")
 llm = get_gemini_llm(api_key)

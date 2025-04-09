@@ -1,4 +1,3 @@
-
 # Sistema Multiagente para Geração de Artigos Utilizando CrewAI
 
 Este projeto utiliza o framework **CrewAI** para automatizar a criação de artigos com base em informações extraídas da **Wikipedia**. Ele envolve agentes que realizam pesquisas e geram artigos com pelo menos 300 palavras sobre um determinado tema.
@@ -43,13 +42,23 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Crie um arquivo `.env` e coloque sua GEMINI_KEY, no seguinte formato:
+4. Configure a variável de ambiente `GEMINI_KEY` com sua chave do Gemini:
 
-```bash
-GEMINI_KEY=SUACHAVEAQUI
+### Windows (PowerShell):
+
+```powershell
+$env:GEMINI_KEY = "SUA_CHAVE_AQUI"
 ```
 
-  Caso haja dúvida sobre como conseguir sua chave do Gemini, acesse esse [link](https://ai.google.dev/gemini-api/docs/api-key?hl=pt-br).
+### Linux / macOS (Bash ou Zsh):
+
+```bash
+export GEMINI_KEY=SUA_CHAVE_AQUI
+```
+
+> Dica: para tornar essa variável permanente, adicione a linha ao final do seu arquivo `~/.bashrc`, `~/.zshrc` ou `~/.profile` e rode `source ~/.bashrc` (ou equivalente).
+
+Caso haja dúvida sobre como conseguir sua chave do Gemini, acesse esse [link](https://ai.google.dev/gemini-api/docs/api-key?hl=pt-br).
 
 ## Como usar
 
@@ -91,8 +100,7 @@ http://127.0.0.1:8000/generate?query=Brasil
 │   ├── llm.py            # Função para obter o LLM (Gemini)
 │   ├── main.py           # Arquivo principal da API FastAPI
 │   ├── schemas.py        # Modelos Pydantic
-│   └── tools.py           # Ferramenta da Wikipedia
-├── .env                  # Variáveis de ambiente
+│   └── tools.py          # Ferramenta da Wikipedia
 ├── requirements.txt      # Dependências do projeto
 └── README.md             # Este arquivo
 ```
@@ -104,7 +112,7 @@ http://127.0.0.1:8000/generate?query=Brasil
 - **CrewAI**: Framework para criação e gerenciamento de agentes inteligentes.
 - **Pydantic**: Utilizado para a validação e estruturação dos dados.
 - **requests**: Biblioteca para fazer requisições HTTP, usada para integrar com a Wikipedia.
-- **python-dotenv**: Para carregar variáveis de ambiente de um arquivo `.env`.
+- **python-dotenv**: Para carregar variáveis de ambiente de um arquivo `.env` (opcional).
 
 ## Contribuição
 
