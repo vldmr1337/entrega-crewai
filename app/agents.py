@@ -12,11 +12,6 @@ llm = get_gemini_llm(api_key)
 # Ferramenta personalizada para Wikipedia
 wikipedia_tool = WikipediaTool()
 
-# Função que usa o WikipediaTool para buscar informações
-def researcher_search(query: str) -> ResearchResult:
-    search_result = wikipedia_tool.search(query)
-    # Criando um ResearchResult Pydantic
-    return ResearchResult(title=query, content=search_result)
 
 # Criando o agente Pesquisador
 researcher = Agent(
